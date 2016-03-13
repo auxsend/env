@@ -1,0 +1,23 @@
+#!/usr/bin/perl
+
+package Tester;
+use strict;
+use warnings;
+
+sub add {
+    return $_[0] + $_[1];
+}
+
+print ::fuck();
+
+
+     
+1;
+package Double::Colon ;
+
+sub ::fuck {
+    print "fffu\n";
+}
+
+     
+1;

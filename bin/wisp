@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+guile ~/local/wisp/wisp/wisp.scm "$@"

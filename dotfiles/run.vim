@@ -1,0 +1,2 @@
+:TLsource test.tim
+:q!

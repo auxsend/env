@@ -1,0 +1,38 @@
+set hintchars=asdfghklqwertyuiop
+noremap a j
+
+set defsearch=google
+set gui=navigation
+ignorekeys add ide.c9.io
+
+hi CmdLine -append font-size:18px
+
+hi CompDesc -append font-size:18px
+
+
+" remap Backspace to Shift-H (go back one page) in normal mode
+nnoremap <BS> H
+
+:js <<EOJS
+  htmget = function(tags) {
+
+  io.system('sh rm -rf ~/io/html/web/firefoxout*');
+
+  var arr = [ "sh ~/repos/env.org/env/tools/htmget ~/io/htmldocs/web", getBrowser().contentDocument.location.href, "'", document.title, "'",   tags];
+
+  liberator.execute(":saveas ~/io/htmldocs/web/firefoxout.html");
+
+  var res = io.system(arr.join(' '));
+  liberator.echo(res);
+  }
+EOJS
+
+:js <<EOJS
+  mdget = function(tags) {
+
+  var arr = [ "sh ~/repos/env.org/env/tools/mdget ~/io/htmldocs/web", getBrowser().contentDocument.location.href, "'", document.title, "'",   tags];
+
+  var res = io.system(arr.join(' '));
+  liberator.echo(res);
+  }
+EOJS
