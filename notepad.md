@@ -114,6 +114,8 @@ or before 5.10
 
     rsync -avz -e "ssh" . plainxt.org:
 
+    exclude with: --exclude '*\.git'
+
     - "plainxt.org" is in ~/.ssh/config
     - don't forget the colon
     - a: archive, z: compress, v: verbose
